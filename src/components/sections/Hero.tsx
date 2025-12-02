@@ -61,9 +61,7 @@ export function Hero() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
           className="relative"
         >
-          {/* Grain overlay behind the boxes */}
-          <div className="grain-overlay absolute inset-0 !z-0" />
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 border border-accent/30 bg-background/95">
+          <div className="grid grid-cols-1 md:grid-cols-3 border border-accent/30 bg-background/95">
             {features.map((feature, index) => (
               <div
                 key={feature.title}
