@@ -1,32 +1,32 @@
 export function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
-      <div className="relative">
-        {/* Grain overlay behind navbar */}
-        <div className="grain-overlay absolute inset-0 !z-0" />
-        <div className="relative z-10 bg-accent">
-          <div className="h-10 flex items-center justify-between px-6">
-            {/* Logo */}
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 bg-background" />
-              <span className="text-sm font-medium tracking-widest text-background uppercase">
-                FalconEdge
-              </span>
-            </div>
-
-            {/* Tagline */}
-            <span className="text-xs tracking-widest text-background hidden md:block">
-              EDGE AI FOR PHYSICAL SECURITY
+      <div className="flex items-center justify-between">
+        {/* Logo Button */}
+        <div className="relative">
+          <div className="grain-overlay absolute inset-0 !z-0" />
+          <div className="relative z-10 bg-accent px-5 py-2 flex items-center gap-2">
+            <div className="w-3 h-3 bg-background" />
+            <span className="text-sm font-medium tracking-widest text-background uppercase">
+              FalconEdge
             </span>
-
-            {/* CTA Button */}
-            <a
-              href="#waitlist"
-              className="inline-flex items-center justify-center px-6 py-3 text-xs tracking-widest font-medium border border-background text-background hover:bg-background hover:text-accent transition-all duration-200"
-            >
-              JOIN WAITLIST
-            </a>
           </div>
+        </div>
+
+        {/* Tagline */}
+        <span className="text-xs tracking-widest text-accent hidden md:block">
+          INTELLIGENCE AT THE EDGE
+        </span>
+
+        {/* CTA Button */}
+        <div className="relative">
+          <div className="grain-overlay absolute inset-0 !z-0" />
+          <a
+            href="#waitlist"
+            className="relative z-10 inline-flex items-center justify-center bg-accent px-5 py-2 text-sm tracking-widest font-medium text-background hover:bg-accent-light transition-all duration-200"
+          >
+            JOIN WAITLIST
+          </a>
         </div>
       </div>
     </nav>

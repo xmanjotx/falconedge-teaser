@@ -11,13 +11,11 @@ export function Vision() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-8 leading-tight">
-            Every critical environment. <br />
-            <span className="text-foreground-muted">Continuously understood.</span>
-          </h2>
-          <p className="text-xl text-foreground-muted font-light leading-relaxed max-w-2xl mx-auto">
-            Processing sensor, video, and signal data in real-time to deliver unified situational awareness. 
-            From defence systems to smart cities, we bring clarity to chaos.
+          <p className="text-xs tracking-widest text-accent mb-6">
+            INTELLIGENCE AT THE EDGE.
+          </p>
+          <p className="text-xl text-foreground-muted font-light leading-relaxed max-w-3xl mx-auto">
+            FalconEdge is a real-time intelligence platform for mission-critical environments. It processes sensor, video, and signal data — delivering unified situational awareness to defence systems, metro cities, and intelligence agencies.
           </p>
         </motion.div>
       </div>

@@ -5,18 +5,18 @@ import { Network, Shield, Search } from 'lucide-react';
 const features = [
   {
     icon: Network,
-    title: "EDGE INTELLIGENCE",
-    description: "PROCESS SENSOR DATA IN REAL-TIME AT THE EDGE FOR INSTANT SITUATIONAL AWARENESS.",
+    title: "REAL-TIME AWARENESS",
+    description: "INTELLIGENCE PROCESSED AT THE EDGE, NOT IN DISTANT CLOUDS. MILLISECONDS, NOT MINUTES.",
   },
   {
     icon: Shield,
-    title: "THREAT DETECTION",
-    description: "AUTOMATED THREAT IDENTIFICATION AND RESPONSE ACROSS ALL CONNECTED SYSTEMS.",
+    title: "AI-NATIVE INTELLIGENCE",
+    description: "MACHINE LEARNING THAT SEES PATTERNS HUMANS MISS. PREDICTIVE, NOT REACTIVE.",
   },
   {
     icon: Search,
-    title: "UNIFIED ANALYTICS",
-    description: "FUSE VIDEO, SIGNAL, AND SENSOR DATA INTO ACTIONABLE INTELLIGENCE.",
+    title: "UNIFIED UNDERSTANDING",
+    description: "EVERY SENSOR, EVERY CAMERA, EVERY SIGNAL — ONE VIEW. CROSS-SITE, CROSS-SYSTEM.",
   },
 ];
 
@@ -43,32 +43,11 @@ export function Hero() {
             className="flex flex-col items-start max-w-2xl"
           >
             {/* Main Headline */}
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-accent leading-[0.9] tracking-wide mb-6">
-              NO BLIND SPOTS,
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#ffd902] leading-[0.9] tracking-wide">
+              REAL-TIME INTELLIGENCE.
               <br />
-              ONLY BOLD MOVES
+              UNIFIED AWARENESS.
             </h1>
-
-            <p className="text-accent/70 text-sm tracking-widest uppercase max-w-md mb-8 leading-relaxed">
-              WE EMPOWER YOU TO TAKE BOLD ACTIONS THAT SECURE
-              YOUR PHYSICAL INFRASTRUCTURE AND ELIMINATE THREATS.
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="#waitlist"
-                className="inline-flex items-center justify-center px-6 py-3 text-xs tracking-widest font-medium bg-accent text-background hover:bg-accent-light transition-all duration-200"
-              >
-                GET ACCESS
-              </a>
-              <a
-                href="#about"
-                className="inline-flex items-center justify-center px-6 py-3 text-xs tracking-widest font-medium border border-accent text-accent hover:bg-accent hover:text-background transition-all duration-200"
-              >
-                ABOUT FALCONEDGE
-              </a>
-            </div>
           </motion.div>
         </div>
 
