@@ -1,110 +1,118 @@
-import { Canvas } from '@react-three/fiber';
 import { motion } from 'framer-motion';
-import { DottedGlobe } from '../ui/DottedGlobe';
-import { ConcentricRings } from '../ui/ConcentricRings';
-import { Button } from '../ui/button';
-import { ChevronRight, Check, Loader2 } from 'lucide-react';
-import { useState } from 'react';
+import { Globe } from '../ui/Globe';
+import { Network, Shield, Search } from 'lucide-react';
+
+const features = [
+  {
+    icon: Network,
+    title: "EDGE INTELLIGENCE",
+    description: "PROCESS SENSOR DATA IN REAL-TIME AT THE EDGE FOR INSTANT SITUATIONAL AWARENESS.",
+  },
+  {
+    icon: Shield,
+    title: "THREAT DETECTION",
+    description: "AUTOMATED THREAT IDENTIFICATION AND RESPONSE ACROSS ALL CONNECTED SYSTEMS.",
+  },
+  {
+    icon: Search,
+    title: "UNIFIED ANALYTICS",
+    description: "FUSE VIDEO, SIGNAL, AND SENSOR DATA INTO ACTIONABLE INTELLIGENCE.",
+  },
+];
 
 export function Hero() {
-  const [email, setEmail] = useState('');
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle');
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    
-    setStatus('loading');
-    
-    // Simulate API call
-    setTimeout(() => {
-      setStatus('success');
-      setEmail('');
-    }, 1500);
-  };
-
   return (
-    <section className="relative h-full w-full overflow-hidden bg-background flex items-center justify-center">
-      {/* Concentric Rings Background */}
-      <ConcentricRings />
-      
-      {/* 3D Globe in Center */}
-      <div className="absolute inset-0 z-10 flex items-center justify-center" style={{ transform: 'translateY(30%)' }}>
-        <div className="w-[300px] h-[300px] md:w-[400px] md:h-[400px]">
-          <Canvas camera={{ position: [0, 0, 4], fov: 35 }}>
-            <ambientLight intensity={0.8} />
-            <DottedGlobe />
-          </Canvas>
+    <section className="relative h-full w-full overflow-hidden bg-background">
+      {/* Globe positioned center-right, rising from bottom like Cipher */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-[15%] translate-y-[50%] w-[600px] h-[600px] md:w-[750px] md:h-[750px] lg:w-[950px] lg:h-[950px] xl:w-[1100px] xl:h-[1100px]">
+        {/* Glow effect behind globe */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-[350px] h-[350px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px] rounded-full bg-accent/10 blur-[70px]" />
         </div>
+        <Globe className="!relative !inset-auto w-full h-full !max-w-none" />
       </div>
 
-      {/* Gradient Overlay for text readability */}
-      <div className="absolute inset-0 z-20 bg-gradient-to-b from-background via-transparent to-background pointer-events-none" />
+      {/* Main Content */}
+      <div className="relative z-10 px-4 h-full flex flex-col">
+        {/* Hero Text Area */}
+        <div className="flex-1 flex items-start pt-8 md:pt-16 lg:pt-24 px-6">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col items-start max-w-2xl"
+          >
+            {/* Main Headline */}
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-accent leading-[0.9] tracking-wide mb-6">
+              NO BLIND SPOTS,
+              <br />
+              ONLY BOLD MOVES
+            </h1>
 
-      {/* Content */}
-      <div className="relative z-30 container mx-auto px-4 text-center flex flex-col items-center justify-start h-full pt-24 md:pt-32">
+            <p className="text-accent/70 text-sm tracking-widest uppercase max-w-md mb-8 leading-relaxed">
+              WE EMPOWER YOU TO TAKE BOLD ACTIONS THAT SECURE
+              YOUR PHYSICAL INFRASTRUCTURE AND ELIMINATE THREATS.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="#waitlist"
+                className="inline-flex items-center justify-center px-6 py-3 text-xs tracking-widest font-medium bg-accent text-background hover:bg-accent-light transition-all duration-200"
+              >
+                GET ACCESS
+              </a>
+              <a
+                href="#about"
+                className="inline-flex items-center justify-center px-6 py-3 text-xs tracking-widest font-medium border border-accent text-accent hover:bg-accent hover:text-background transition-all duration-200"
+              >
+                ABOUT FALCONEDGE
+              </a>
+            </div>
+          </motion.div>
+        </div>
+
+      </div>
+
+      {/* Feature Cards at Bottom - Edge to Edge */}
+      <div className="absolute bottom-0 left-0 right-0 z-20 px-4 pb-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col items-center max-w-4xl"
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+          className="relative"
         >
-          <h2 className="text-accent tracking-[0.3em] text-[10px] md:text-xs font-bold uppercase mb-6 border border-accent/20 px-4 py-1 rounded-full bg-accent/5 backdrop-blur-sm">
-            FalconEdge
-          </h2>
-          
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight text-white mb-2 leading-none">
-            Intelligence
-          </h1>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-foreground-muted/40 mb-6 leading-none">
-            at the edge.
-          </h1>
-
-          <p className="text-foreground-muted text-xs md:text-sm max-w-md mb-8 font-light leading-relaxed tracking-wide">
-            Real-time intelligence for the physical world. <br/>
-            Unified situational awareness for mission-critical environments.
-          </p>
-          
-          {/* Waitlist Form Inline */}
-          <div className="w-full max-w-sm relative group">
-             <div className="absolute -inset-0.5 bg-gradient-to-r from-accent/20 to-accent/0 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
-             <form onSubmit={handleSubmit} className="relative flex items-center bg-black/80 border border-white/10 rounded-lg p-1 pr-1 shadow-2xl backdrop-blur-xl">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  disabled={status !== 'idle'}
-                  className="flex-1 bg-transparent text-white px-4 py-2.5 outline-none placeholder:text-foreground-muted/50 text-sm"
+          {/* Grain overlay behind the boxes */}
+          <div className="grain-overlay absolute inset-0 !z-0" />
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 border border-accent/30 bg-background/95">
+            {features.map((feature, index) => (
+              <div
+                key={feature.title}
+                className={`relative py-8 px-6 ${index < 2 ? 'md:border-r border-accent/30' : ''}`}
+              >
+                {/* Grid pattern overlay */}
+                <div
+                  className="absolute inset-0 opacity-[0.07] pointer-events-none"
+                  style={{
+                    backgroundImage: `
+                      linear-gradient(to right, var(--color-accent) 1px, transparent 1px),
+                      linear-gradient(to bottom, var(--color-accent) 1px, transparent 1px)
+                    `,
+                    backgroundSize: '40px 40px'
+                  }}
                 />
-                <Button 
-                  type="submit"
-                  disabled={status !== 'idle'}
-                  className="bg-white text-black hover:bg-accent hover:text-black rounded-md px-5 py-2 h-auto text-xs font-bold uppercase tracking-wider transition-all duration-300"
-                >
-                  {status === 'loading' ? (
-                    <Loader2 className="w-4 h-4 animate-spin" />
-                  ) : status === 'success' ? (
-                    <Check className="w-4 h-4" />
-                  ) : (
-                    <span className="flex items-center gap-1">
-                      Join <ChevronRight className="w-3 h-3" />
-                    </span>
-                  )}
-                </Button>
-             </form>
+                <div className="relative z-10">
+                  <feature.icon className="w-7 h-7 text-accent mb-8" strokeWidth={1.5} />
+                  <h3 className="text-accent text-base tracking-widest font-medium mb-3">
+                    {feature.title}
+                  </h3>
+                  <p className="text-accent/60 text-xs tracking-wider leading-relaxed uppercase">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
-          
-          {status === 'success' && (
-            <motion.p 
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mt-3 text-accent text-xs tracking-widest uppercase"
-            >
-              Access Granted. We'll be in touch.
-            </motion.p>
-          )}
-
         </motion.div>
       </div>
     </section>

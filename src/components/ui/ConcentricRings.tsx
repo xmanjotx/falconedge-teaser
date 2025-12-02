@@ -5,50 +5,55 @@ interface RingData {
   segments: string[];
   rotationDuration: number;
   direction: 1 | -1;
-  color: string;
+  opacity: number;
 }
+
+// More muted amber/gold color scheme
+const accentColor = "217, 119, 6"; // amber-600
 
 const rings: RingData[] = [
   {
-    radius: 260,
-    segments: ["REAL-TIME DATA PIPELINE", "API", "SENSORS"],
-    rotationDuration: 120,
-    direction: 1,
-    color: "rgba(249, 115, 22, 0.6)"
-  },
-  {
-    radius: 340,
-    segments: ["UNIFIED INTELLIGENCE", "THREAT", "INTEL", "ASSET", "RISK"],
-    rotationDuration: 150,
-    direction: -1,
-    color: "rgba(249, 115, 22, 0.4)"
-  },
-  {
-    radius: 420,
-    segments: ["SITUATIONAL AWARENESS", "VIDEO", "SIGNAL", "FUSION", "ANALYTICS"],
+    radius: 240,
+    segments: ["DATA PIPELINE", "API", "SENSORS"],
     rotationDuration: 180,
     direction: 1,
-    color: "rgba(249, 115, 22, 0.3)"
+    opacity: 0.35
   },
   {
-    radius: 500,
-    segments: ["DEFENCE", "METRO CITIES", "INTELLIGENCE AGENCIES", "CRITICAL INFRASTRUCTURE"],
-    rotationDuration: 200,
+    radius: 320,
+    segments: ["THREAT DETECTION", "ASSET TRACKING", "RISK ANALYSIS"],
+    rotationDuration: 220,
     direction: -1,
-    color: "rgba(249, 115, 22, 0.2)"
+    opacity: 0.25
   },
   {
-    radius: 580,
-    segments: ["AI AGENTS", "AUTONOMOUS RESPONSE", "EDGE COMPUTING", "MACHINE LEARNING"],
-    rotationDuration: 240,
+    radius: 400,
+    segments: ["VIDEO ANALYTICS", "SIGNAL PROCESSING", "DATA FUSION"],
+    rotationDuration: 260,
     direction: 1,
-    color: "rgba(249, 115, 22, 0.15)"
+    opacity: 0.18
+  },
+  {
+    radius: 480,
+    segments: ["DEFENSE", "SMART CITIES", "CRITICAL INFRASTRUCTURE"],
+    rotationDuration: 300,
+    direction: -1,
+    opacity: 0.12
+  },
+  {
+    radius: 560,
+    segments: ["AI AGENTS", "EDGE COMPUTING", "ML INFERENCE"],
+    rotationDuration: 360,
+    direction: 1,
+    opacity: 0.08
   },
 ];
 
 function Ring({ ring }: { ring: RingData }) {
   const segmentAngle = 360 / ring.segments.length;
-  
+  const ringColor = `rgba(${accentColor}, ${ring.opacity})`;
+  const textColor = `rgba(161, 161, 170, ${Math.min(ring.opacity * 2.5, 0.7)})`; // zinc-400 with opacity
+
   return (
     <motion.g
       animate={{ rotate: ring.direction * 360 }}
@@ -59,20 +64,20 @@ function Ring({ ring }: { ring: RingData }) {
       }}
       style={{ transformOrigin: 'center' }}
     >
-      {/* Ring Circle */}
+      {/* Ring Circle - subtle dashed line */}
       <circle
         cx="50%"
         cy="50%"
         r={ring.radius}
         fill="none"
-        stroke={ring.color}
-        strokeWidth="1.5"
-        strokeDasharray="4 4"
+        stroke={ringColor}
+        strokeWidth="1"
+        strokeDasharray="2 6"
       />
-      
+
       {/* Segment Labels */}
       {ring.segments.map((segment, i) => {
-        const angle = (i * segmentAngle - 90) * (Math.PI / 180); // Start from top
+        const angle = (i * segmentAngle - 90) * (Math.PI / 180);
         const x = 700 + ring.radius * Math.cos(angle);
         const y = 700 + ring.radius * Math.sin(angle);
         return (
@@ -81,22 +86,23 @@ function Ring({ ring }: { ring: RingData }) {
             <circle
               cx={x}
               cy={y}
-              r="4"
-              fill={ring.color}
+              r="2.5"
+              fill={ringColor}
             />
             {/* Text label */}
             <text
               x={x}
-              y={y - 15}
-              fill="rgba(255,255,255,0.8)"
-              fontSize="11"
-              fontFamily="Lexend, sans-serif"
-              fontWeight="600"
+              y={y - 12}
+              fill={textColor}
+              fontSize="9"
+              fontFamily="Inter, system-ui, sans-serif"
+              fontWeight="500"
               textAnchor="middle"
               style={{
                 transform: `rotate(${-ring.direction * 360}deg)`,
                 transformOrigin: `${x}px ${y}px`,
-                letterSpacing: '0.05em'
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase'
               }}
             >
               {segment}
@@ -110,51 +116,39 @@ function Ring({ ring }: { ring: RingData }) {
 
 export function ConcentricRings() {
   return (
-    <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-      <svg 
-        viewBox="0 0 1400 1400" 
+    <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden opacity-80">
+      <svg
+        viewBox="0 0 1400 1400"
         className="w-full h-full max-w-[1400px] max-h-[1400px]"
-        style={{ transform: 'translateY(30%)' }} // Push down to show upper arcs
+        style={{ transform: 'translateY(25%)' }}
       >
         <defs>
-          {/* Radial gradient for center glow */}
+          {/* Subtle radial gradient for center */}
           <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="rgba(249, 115, 22, 0.3)" />
-            <stop offset="100%" stopColor="rgba(249, 115, 22, 0)" />
+            <stop offset="0%" stopColor={`rgba(${accentColor}, 0.08)`} />
+            <stop offset="70%" stopColor={`rgba(${accentColor}, 0.02)`} />
+            <stop offset="100%" stopColor="transparent" />
           </radialGradient>
         </defs>
-        
-        {/* Background glow */}
+
+        {/* Very subtle background glow */}
         <circle cx="700" cy="700" r="200" fill="url(#centerGlow)" />
-        
+
         {/* Rings */}
         {rings.map((ring, index) => (
           <Ring key={index} ring={ring} />
         ))}
-        
-        {/* Center circle (placeholder for globe) */}
+
+        {/* Inner ring - subtle border for globe area */}
         <circle
           cx="700"
           cy="700"
-          r="160"
-          fill="rgba(249, 115, 22, 0.05)"
-          stroke="rgba(249, 115, 22, 0.5)"
-          strokeWidth="2"
+          r="150"
+          fill={`rgba(${accentColor}, 0.02)`}
+          stroke={`rgba(${accentColor}, 0.15)`}
+          strokeWidth="1"
+          strokeDasharray="4 4"
         />
-        
-        {/* Center label */}
-        <text
-          x="700"
-          y="720"
-          fill="white"
-          fontSize="18"
-          fontFamily="Lexend, sans-serif"
-          fontWeight="700"
-          textAnchor="middle"
-          letterSpacing="0.2em"
-        >
-          FALCONEDGE
-        </text>
       </svg>
     </div>
   );

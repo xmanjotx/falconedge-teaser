@@ -136,17 +136,17 @@ export function DottedGlobe() {
     <group rotation={[0.2, -0.5, 0.1]}> {/* Initial tilt/rotation */}
       <instancedMesh ref={meshRef} args={[undefined, undefined, instanceData.length]}>
         <boxGeometry args={[1, 1, 1]} />
-        <meshBasicMaterial 
-            color="#525252" 
-            transparent 
-            opacity={0.8}
+        <meshBasicMaterial
+            color="#ffd902"
+            transparent
+            opacity={0.9}
         />
       </instancedMesh>
-      
+
       {/* Inner Sphere to block seeing through the back of the globe */}
       <mesh>
         <sphereGeometry args={[RADIUS - 0.1, 32, 32]} />
-        <meshBasicMaterial color="#020202" />
+        <meshBasicMaterial color="#000000" />
       </mesh>
     </group>
   );
