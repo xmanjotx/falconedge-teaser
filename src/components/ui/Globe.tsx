@@ -1,10 +1,28 @@
 "use client";
 
 import createGlobe, { COBEOptions } from "cobe";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
-const GLOBE_CONFIG: COBEOptions = {
+const MARKERS = [
+  { location: [14.5995, 120.9842], size: 0.03 },
+  { location: [19.076, 72.8777], size: 0.05 },
+  { location: [23.8103, 90.4125], size: 0.04 },
+  { location: [30.0444, 31.2357], size: 0.04 },
+  { location: [39.9042, 116.4074], size: 0.06 },
+  { location: [-23.5505, -46.6333], size: 0.05 },
+  { location: [19.4326, -99.1332], size: 0.05 },
+  { location: [40.7128, -74.006], size: 0.06 },
+  { location: [34.6937, 135.5022], size: 0.04 },
+  { location: [41.0082, 28.9784], size: 0.04 },
+  { location: [51.5074, -0.1278], size: 0.05 },
+  { location: [48.8566, 2.3522], size: 0.04 },
+  { location: [-33.8688, 151.2093], size: 0.04 },
+  { location: [1.3521, 103.8198], size: 0.04 },
+  { location: [35.6762, 139.6503], size: 0.05 },
+];
+
+const createGlobeConfig = (accentColor: [number, number, number]): COBEOptions => ({
   width: 800,
   height: 800,
   onRender: () => {},
@@ -16,34 +34,19 @@ const GLOBE_CONFIG: COBEOptions = {
   mapSamples: 16000,
   mapBrightness: 1.2,
   baseColor: [0.1, 0.1, 0.1],
-  markerColor: [1, 0.85, 0.01], // #ffd902 in RGB normalized
-  glowColor: [1, 0.85, 0.01],
-  markers: [
-    { location: [14.5995, 120.9842], size: 0.03 },
-    { location: [19.076, 72.8777], size: 0.05 },
-    { location: [23.8103, 90.4125], size: 0.04 },
-    { location: [30.0444, 31.2357], size: 0.04 },
-    { location: [39.9042, 116.4074], size: 0.06 },
-    { location: [-23.5505, -46.6333], size: 0.05 },
-    { location: [19.4326, -99.1332], size: 0.05 },
-    { location: [40.7128, -74.006], size: 0.06 },
-    { location: [34.6937, 135.5022], size: 0.04 },
-    { location: [41.0082, 28.9784], size: 0.04 },
-    { location: [51.5074, -0.1278], size: 0.05 },
-    { location: [48.8566, 2.3522], size: 0.04 },
-    { location: [-33.8688, 151.2093], size: 0.04 },
-    { location: [1.3521, 103.8198], size: 0.04 },
-    { location: [35.6762, 139.6503], size: 0.05 },
-  ],
-};
+  markerColor: accentColor,
+  glowColor: accentColor,
+  markers: MARKERS,
+});
 
 export function Globe({
   className,
-  config = GLOBE_CONFIG,
+  accentColor = [1, 0.65, 0], // Amber #ffa500
 }: {
   className?: string;
-  config?: COBEOptions;
+  accentColor?: [number, number, number];
 }) {
+  const config = useMemo(() => createGlobeConfig(accentColor), [accentColor[0], accentColor[1], accentColor[2]]);
   let phi = 0;
   let width = 0;
   const canvasRef = useRef<HTMLCanvasElement>(null);

@@ -6,27 +6,11 @@
 
 @layer base {
   :root {
-    --background: 0 0% 0%; /* Pure black */
-    --foreground: 51 100% 50%; /* #ffd902 */
-    --foreground-white: 0 0% 100%;
-    --card: 0 0% 0%;
-    --card-foreground: 51 100% 50%;
-    --popover: 0 0% 5%;
-    --popover-foreground: 51 100% 50%;
-    --primary: 51 100% 50%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 51 100% 50%;
-    --muted: 0 0% 15%;
-    --muted-foreground: 51 100% 40%;
-    --accent: 51 100% 50%; /* #ffd902 */
-    --accent-foreground: 0 0% 0%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 51 100% 50%;
-    --input: 0 0% 10%;
-    --ring: 51 100% 50%;
-    --radius: 0rem;
+    --accent-color: #ffa500;
+    --accent-rgb: 255, 165, 0;
+    --accent-light: #ffb733;
+    --accent-dark: #cc8400;
+    --text-on-accent: #000000;
   }
 }
 

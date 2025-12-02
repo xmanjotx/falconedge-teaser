@@ -43,7 +43,7 @@ export function Hero() {
             className="flex flex-col items-start max-w-2xl"
           >
             {/* Main Headline */}
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#ffd902] leading-[0.9] tracking-wide">
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-accent leading-[0.9] tracking-wide">
               REAL-TIME INTELLIGENCE.
               <br />
               UNIFIED AWARENESS.
@@ -71,11 +71,11 @@ export function Hero() {
               >
                 {/* Grid pattern overlay */}
                 <div
-                  className="absolute inset-0 opacity-[0.07] pointer-events-none"
+                  className="absolute inset-0 opacity-[0.03] pointer-events-none"
                   style={{
                     backgroundImage: `
-                      linear-gradient(to right, var(--color-accent) 1px, transparent 1px),
-                      linear-gradient(to bottom, var(--color-accent) 1px, transparent 1px)
+                      linear-gradient(to right, var(--accent-color) 1px, transparent 1px),
+                      linear-gradient(to bottom, var(--accent-color) 1px, transparent 1px)
                     `,
                     backgroundSize: '40px 40px'
                   }}

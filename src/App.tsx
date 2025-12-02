@@ -3,7 +3,7 @@ import { Hero } from "@/components/sections/Hero";
 
 function App() {
   return (
-    <div className="h-screen w-screen overflow-hidden bg-background text-accent font-sans selection:bg-accent selection:text-background flex flex-col">
+    <div className="h-screen w-screen overflow-hidden bg-black font-sans flex flex-col">
       <Navbar />
       <main className="flex-grow relative pt-16">
         <Hero />
