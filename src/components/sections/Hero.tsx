@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Globe } from '../ui/Globe';
+import { LaserFlow } from '../ui/LaserFlow';
 import { Network, Shield, Search } from 'lucide-react';
 
 const features = [
@@ -24,12 +25,28 @@ export function Hero() {
   return (
     <section className="relative h-full w-full overflow-hidden bg-background">
       {/* Globe positioned center-right, rising from bottom like Cipher */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-[15%] translate-y-[50%] w-[600px] h-[600px] md:w-[750px] md:h-[750px] lg:w-[950px] lg:h-[950px] xl:w-[1100px] xl:h-[1100px]">
+      <div className="absolute bottom-0 left-1/2 -translate-x-[15%] translate-y-[50%] w-[600px] h-[600px] md:w-[750px] md:h-[750px] lg:w-[950px] lg:h-[950px] xl:w-[1100px] xl:h-[1100px] overflow-visible">
         {/* Glow effect behind globe */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="w-[350px] h-[350px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px] rounded-full bg-accent/10 blur-[70px]" />
         </div>
-        <Globe className="!relative !inset-auto w-full h-full !max-w-none" />
+
+        {/* LaserFlow Effect aligned with globe center */}
+        <div className="absolute inset-0 -translate-y-1/2 pointer-events-none">
+          <LaserFlow 
+            color="#ffa500"
+            horizontalBeamOffset={0}
+            verticalBeamOffset={-0.3}
+            fogIntensity={0.85}
+            wispIntensity={5.5}
+            flowSpeed={0.5}
+            verticalSizing={1.8}
+            horizontalSizing={0.28}
+            decay={0.85}
+          />
+        </div>
+
+        <Globe className="!relative !inset-auto w-full h-full !max-w-none opacity-0" />
       </div>
 
       {/* Main Content */}
