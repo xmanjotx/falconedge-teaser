@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import WorldMap from '../world-map-demo';
+import ShinyText from '../ShinyText';
 import { Network, Shield, Search } from 'lucide-react';
 
 const features = [
@@ -34,19 +35,30 @@ export function Hero() {
       {/* Main Content */}
       <div className="relative z-10 px-4 h-full flex flex-col">
         {/* Hero Text Area */}
-        <div className="flex-1 flex items-start pt-8 md:pt-16 lg:pt-24 px-6">
+        <div className="flex-1 flex items-center justify-center px-6">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col items-start max-w-2xl"
+            className="flex flex-col items-center max-w-4xl text-center"
           >
             {/* Main Headline */}
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-amber-500 leading-[0.9] tracking-wide">
-              REAL-TIME INTELLIGENCE.
-              <br />
-              UNIFIED AWARENESS.
-            </h1>
+            <div className="space-y-4">
+              <ShinyText 
+                text="REAL-TIME INTELLIGENCE."
+                disabled={false}
+                speed={2}
+                className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-amber-500 leading-[0.9] tracking-wide text-center block"
+                style={{ fontFamily: "'Bebas Neue', Impact, sans-serif" }}
+              />
+              <ShinyText 
+                text="UNIFIED AWARENESS."
+                disabled={false}
+                speed={2}
+                className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-amber-500 leading-[0.9] tracking-wide text-center block"
+                style={{ fontFamily: "'Bebas Neue', Impact, sans-serif" }}
+              />
+            </div>
           </motion.div>
         </div>
 
