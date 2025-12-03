@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
-import { Globe } from '../ui/Globe';
-import { LaserFlow } from '../ui/LaserFlow';
+import WorldMap from '../world-map-demo';
 import { Network, Shield, Search } from 'lucide-react';
 
 const features = [
@@ -23,31 +22,14 @@ const features = [
 
 export function Hero() {
   return (
-    <section className="relative h-full w-full overflow-hidden bg-background">
-      {/* Globe positioned center-right, rising from bottom like Cipher */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-[15%] translate-y-[50%] w-[600px] h-[600px] md:w-[750px] md:h-[750px] lg:w-[950px] lg:h-[950px] xl:w-[1100px] xl:h-[1100px] overflow-visible">
-        {/* Glow effect behind globe */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-[350px] h-[350px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px] rounded-full bg-accent/10 blur-[70px]" />
-        </div>
-
-        {/* LaserFlow Effect aligned with globe center */}
-        <div className="absolute inset-0 -translate-y-1/2 pointer-events-none">
-          <LaserFlow 
-            color="#ffa500"
-            horizontalBeamOffset={0}
-            verticalBeamOffset={-0.3}
-            fogIntensity={0.85}
-            wispIntensity={5.5}
-            flowSpeed={0.5}
-            verticalSizing={1.8}
-            horizontalSizing={0.28}
-            decay={0.85}
-          />
-        </div>
-
-        <Globe className="!relative !inset-auto w-full h-full !max-w-none opacity-0" />
+    <section className="relative h-full w-full overflow-hidden bg-black">
+      {/* World Map as full background */}
+      <div className="absolute inset-0 w-full h-full opacity-40">
+        <WorldMap />
       </div>
+
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/50" />
 
       {/* Main Content */}
       <div className="relative z-10 px-4 h-full flex flex-col">
@@ -60,7 +42,7 @@ export function Hero() {
             className="flex flex-col items-start max-w-2xl"
           >
             {/* Main Headline */}
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-accent leading-[0.9] tracking-wide">
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-amber-500 leading-[0.9] tracking-wide">
               REAL-TIME INTELLIGENCE.
               <br />
               UNIFIED AWARENESS.
@@ -78,29 +60,29 @@ export function Hero() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
           className="relative"
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 border border-accent/30 bg-background/95">
+          <div className="grid grid-cols-1 md:grid-cols-3 border border-amber-500/30 bg-black/95">
             {features.map((feature, index) => (
               <div
                 key={feature.title}
-                className={`relative py-8 px-6 ${index < 2 ? 'md:border-r border-accent/30' : ''}`}
+                className={`relative py-8 px-6 ${index < 2 ? 'md:border-r border-amber-500/30' : ''}`}
               >
                 {/* Grid pattern overlay */}
                 <div
                   className="absolute inset-0 opacity-[0.03] pointer-events-none"
                   style={{
                     backgroundImage: `
-                      linear-gradient(to right, var(--accent-color) 1px, transparent 1px),
-                      linear-gradient(to bottom, var(--accent-color) 1px, transparent 1px)
+                      linear-gradient(to right, #f59e0b 1px, transparent 1px),
+                      linear-gradient(to bottom, #f59e0b 1px, transparent 1px)
                     `,
                     backgroundSize: '40px 40px'
                   }}
                 />
                 <div className="relative z-10">
-                  <feature.icon className="w-7 h-7 text-accent mb-8" strokeWidth={1.5} />
-                  <h3 className="text-accent text-base tracking-widest font-medium mb-3">
+                  <feature.icon className="w-7 h-7 text-amber-500 mb-8" strokeWidth={1.5} />
+                  <h3 className="text-amber-500 text-base tracking-widest font-medium mb-3">
                     {feature.title}
                   </h3>
-                  <p className="text-accent/60 text-xs tracking-wider leading-relaxed uppercase">
+                  <p className="text-amber-500/60 text-xs tracking-wider leading-relaxed uppercase">
                     {feature.description}
                   </p>
                 </div>

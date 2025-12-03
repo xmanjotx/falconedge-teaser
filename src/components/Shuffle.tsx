@@ -232,7 +232,7 @@ const Shuffle = ({
           tl.to(
             targets,
             {
-              x: (i, t) => parseFloat(t.getAttribute('data-final-x') || '0'),
+              x: (_: any, t: any) => parseFloat(t.getAttribute('data-final-x') || '0'),
               duration,
               ease,
               force3D: true,
@@ -246,8 +246,8 @@ const Shuffle = ({
         };
 
         if (animationMode === 'evenodd') {
-          const odd = strips.filter((_, i) => i % 2 === 1);
-          const even = strips.filter((_, i) => i % 2 === 0);
+          const odd = strips.filter((_, index) => index % 2 === 1);
+          const even = strips.filter((_, index) => index % 2 === 0);
           const oddTotal = duration + Math.max(0, odd.length - 1) * stagger;
           const evenStart = odd.length ? oddTotal * 0.7 : 0;
           if (odd.length) addTween(odd, 0);
