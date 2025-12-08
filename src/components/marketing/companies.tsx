@@ -3,15 +3,15 @@ import Marquee from "../ui/marquee";
 
 const Companies = () => {
     return (
-        <div className="flex w-full py-20">
+        <div className="flex w-full py-5 md:py-6">
             <div className="flex flex-col items-center justify-center text-center w-full py-2">
                 <h2 className="text-xl heading font-medium">
                     Built on top of the modern cloud edge
                 </h2>
-                <p className="mt-2 text-sm text-muted-foreground">
+                <p className="mt-1 text-sm text-muted-foreground">
                     Powered by leading cloud and edge providers.
                 </p>
-                <div className="mt-16 w-full relative overflow-hidden">
+                <div className="mt-4 md:mt-5 w-full relative overflow-hidden">
                     <Marquee pauseOnHover className="[--duration:30s]">
                         <div className="flex items-center justify-center gap-12 md:gap-16">
                             <Image
