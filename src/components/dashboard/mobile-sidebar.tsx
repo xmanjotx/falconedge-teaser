@@ -7,19 +7,16 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet";
 import { SIDEBAR_LINKS } from "@/constants/links";
-import { useClerk } from "@/hooks/use-clerk-safe";
 import { LogOutIcon, MenuIcon, SearchIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const MobileSidebar = () => {
 
-    const { signOut } = useClerk();
-
     const pathname = usePathname();
 
-    const handleLogout = async () => {
-        await signOut();
+    const handleLogout = () => {
+        window.location.href = "/";
     };
 
     return (

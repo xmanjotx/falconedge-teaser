@@ -8,17 +8,14 @@ import Container from "../global/container";
 import { Button, buttonVariants } from "../ui/button";
 
 import { cn } from "@/functions";
-import { useClerk } from "@/hooks/use-clerk-safe";
 
 
 const DashboardSidebar = () => {
 
-    const { signOut } = useClerk();
-
     const pathname = usePathname();
 
-    const handleLogout = async () => {
-        await signOut();
+    const handleLogout = () => {
+        window.location.href = "/";
     };
 
     return (
