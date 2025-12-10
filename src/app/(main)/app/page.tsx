@@ -18,6 +18,8 @@ import {
 } from "@/components/ui/chart"
 import { Container } from "@/components";
 
+export const dynamic = "force-dynamic";
+
 const chartConfig = {
     reach: {
         label: "Total Reach",
