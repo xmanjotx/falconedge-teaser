@@ -15,7 +15,7 @@ const CTA = () => {
                             Ready for real-time <br className="hidden md:block" /> intelligence?
                         </h2>
                         <p className="text-base md:text-lg text-center text-muted-foreground max-w-xl mx-auto mt-6">
-                            Join defence systems, metro operations, and intelligence agencies already using FalconEdge for mission-critical situational awareness.
+                            Join defense systems, metro operations, and intelligence agencies already using FalconEdge for mission-critical situational awareness.
                         </p>
                         <div className="flex flex-col md:flex-row items-center justify-center w-full gap-6 mt-6">
                             <Button asChild size="lg" className="w-full md:w-max">
@@ -24,8 +24,8 @@ const CTA = () => {
                                 </Link>
                             </Button>
                             <Button asChild size="lg" variant="secondary" className="w-full md:w-max">
-                                <Link href="#mission">
-                                    View Documentation
+                                <Link href="#capabilities">
+                                    Explore Capabilities
                                 </Link>
                             </Button>
                         </div>

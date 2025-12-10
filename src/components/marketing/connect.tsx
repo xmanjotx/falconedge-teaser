@@ -14,15 +14,15 @@ const Connect = () => {
                         Built for mission-critical environments
                     </h2>
                     <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6">
-                        FalconEdge delivers unified situational awareness across defence, metro, and intelligence operations
+                        FalconEdge delivers unified situational awareness across defense, metro, and intelligence operations
                     </p>
                 </div>
             </Container>
             <Container>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 w-full">
-                    <UseCaseCard 
+                    <UseCaseCard
                         icon={Shield}
-                        title="Defence"
+                        title="Defense"
                         headline="Situational awareness. Uncompromised."
                         description="Real-time intelligence across distributed assets. Edge processing for operational security. Unified command visibility."
                     />

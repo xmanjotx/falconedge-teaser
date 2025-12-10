@@ -17,7 +17,7 @@ const Features = () => {
                         See everything. <br /> Miss nothing.
                     </h2>
                     <p className="text-base md:text-lg text-center text-muted-foreground mt-6">
-                        FalconEdge transforms raw data into actionable insight before threats become incidents. Built for defence, metro, and intelligence operations.
+                        FalconEdge transforms raw data into actionable insight before threats become incidents. Built for defense, metro, and intelligence operations.
                     </p>
                 </div>
             </Container>

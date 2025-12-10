@@ -11,8 +11,6 @@ import Companies from "./marketing/companies";
 import Features from "./marketing/features";
 import Connect from "./marketing/connect";
 import Perks from "./marketing/perks";
-import Pricing from "./marketing/pricing";
-import Reviews from "./marketing/reviews";
 import CTA from "./marketing/cta";
 import Footer from "./marketing/footer";
 
@@ -28,8 +26,6 @@ export {
     Features,
     Connect,
     Perks,
-    Pricing,
-    Reviews,
     CTA,
     Footer,
     Providers,

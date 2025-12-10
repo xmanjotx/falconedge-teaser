@@ -19,9 +19,9 @@ const Hero = () => {
                         </div>
                     </div>
                     <span className="inline-flex items-center justify-center gap-2 animate-text-gradient animate-background-shine bg-gradient-to-r from-primary via-emerald-400 to-primary bg-[200%_auto] bg-clip-text text-sm text-transparent">
-                        Real-time Intelligence Platform
+                        Tactical Intelligence Platform
                         <span className="text-xs text-secondary-foreground px-1.5 py-0.5 rounded-full bg-gradient-to-b from-foreground/20 to-foreground/10 flex items-center justify-center">
-                            v1.0 Live
+                            Now Available
                             <ArrowRightIcon className="w-3.5 h-3.5 ml-1 text-foreground/50" />
                         </span>
                     </span>
@@ -33,7 +33,7 @@ const Hero = () => {
             />
             <Container delay={0.1}>
                 <p className="text-sm sm:text-base lg:text-lg mt-4 text-muted-foreground max-w-2xl mx-auto">
-                    Global Intelligence. Edge Native. <span className="hidden sm:inline">Delivering unified situational awareness to defense, metro, and intelligence operations.</span>
+                    Real-time threat detection and unified situational awareness for defense, metro, and intelligence operations.
                 </p>
             </Container>
             <Container delay={0.2}>

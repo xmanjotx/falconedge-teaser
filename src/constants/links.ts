@@ -1,84 +1,34 @@
-import { ClockIcon, MessageSquare, BarChart2, FileTextIcon, UserPlusIcon, CreditCardIcon, SettingsIcon, LogOut, Headphones, ChartPieIcon, LucideIcon, MessagesSquareIcon, NewspaperIcon, MegaphoneIcon, LineChartIcon, MessageSquareTextIcon, UsersIcon } from 'lucide-react';
-
-type Link = {
-    href: string;
-    label: string;
-    icon: LucideIcon;
-}
-
-export const SIDEBAR_LINKS: Link[] = [
-    {
-        href: "/dashboard",
-        label: "Dashboard",
-        icon: ChartPieIcon,
-    },
-    {
-        href: "/dashboard/campaigns",
-        label: "Campaigns",
-        icon: MegaphoneIcon
-    },
-    {
-        href: "/dashboard/analytics",
-        label: "Analytics",
-        icon: LineChartIcon
-    },
-    {
-        href: "/dashboard/posts",
-        label: "Posts",
-        icon: MessageSquareTextIcon
-    },
-    {
-        href: "/dashboard/engagement",
-        label: "Engagement",
-        icon: UsersIcon
-    },
-    {
-        href: "/dashboard/billing",
-        label: "Billing",
-        icon: CreditCardIcon
-    },
-    {
-        href: "/dashboard/settings",
-        label: "Settings",
-        icon: SettingsIcon
-    },
-];
-
 export const FOOTER_LINKS = [
     {
         title: "Platform",
         links: [
             { name: "Overview", href: "/" },
             { name: "Capabilities", href: "#capabilities" },
-            { name: "Architecture", href: "#architecture" },
-            { name: "Security", href: "#security" },
+            { name: "Use Cases", href: "#mission" },
+            { name: "Why FalconEdge", href: "#values" },
         ],
     },
     {
-        title: "Use Cases",
+        title: "Solutions",
         links: [
-            { name: "Defence", href: "/use-cases/defence" },
-            { name: "Metro & Smart Cities", href: "/use-cases/metro-smart-cities" },
-            { name: "Intelligence Agencies", href: "/use-cases/intelligence-agencies" },
-            { name: "Critical Infrastructure", href: "/use-cases/critical-infrastructure" },
+            { name: "Defense", href: "#mission" },
+            { name: "Metro & Smart Cities", href: "#mission" },
+            { name: "Intelligence", href: "#mission" },
+            { name: "Critical Infrastructure", href: "#mission" },
         ],
     },
     {
         title: "Company",
         links: [
-            { name: "About", href: "/about" },
-            { name: "Contact", href: "/contact" },
-            { name: "Careers", href: "/careers" },
-            { name: "Press", href: "/press" },
+            { name: "Request Access", href: "/request-access" },
+            { name: "Contact", href: "mailto:contact@falconedge.io" },
         ],
     },
     {
-        title: "Developers",
+        title: "Legal",
         links: [
-            { name: "Documentation", href: "/docs" },
-            { name: "API Reference", href: "/api" },
-            { name: "SDKs", href: "/sdks" },
-            { name: "Status", href: "/status" },
+            { name: "Privacy Policy", href: "/privacy" },
+            { name: "Terms of Service", href: "/terms" },
         ],
     },
 ];
