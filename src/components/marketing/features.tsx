@@ -89,7 +89,7 @@ const Features = () => {
                                         <div className="w-28 h-28 rounded-full bg-primary/10 blur-3xl -z-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
                                         <div className="text-center mt-4">
                                             <h4 className="text-xl font-heading font-medium heading">Mission-Critical Reliability</h4>
-                                            <p className="text-sm text-muted-foreground mt-2">Zero tolerance for downtime. Works when the internet doesn't.</p>
+                                            <p className="text-sm text-muted-foreground mt-2">Zero tolerance for downtime. Works when the internet doesn&apos;t.</p>
                                         </div>
                                     </div>
                                 </MagicCard>

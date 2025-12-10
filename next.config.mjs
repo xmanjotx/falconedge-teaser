@@ -6,8 +6,12 @@ const nextConfig = {
                 protocol: "https",
                 hostname: "randomuser.me"
             }
-        ]
-    }
+        ],
+        unoptimized: true
+    },
+    output: 'export',
+    trailingSlash: true,
+    distDir: 'out'
 };
 
 export default nextConfig;

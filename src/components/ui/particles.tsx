@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 interface MousePosition {
     x: number;
@@ -76,33 +76,12 @@ export const Particles: React.FC<ParticlesProps> = ({
     const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 });
     const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1;
 
-    useEffect(() => {
-        if (canvasRef.current) {
-            context.current = canvasRef.current.getContext("2d");
-        }
-        initCanvas();
-        animate();
-        window.addEventListener("resize", initCanvas);
-
-        return () => {
-            window.removeEventListener("resize", initCanvas);
-        };
-    }, [color]);
-
-    useEffect(() => {
-        onMouseMove();
-    }, [mousePosition.x, mousePosition.y]);
-
-    useEffect(() => {
-        initCanvas();
-    }, [refresh]);
-
-    const initCanvas = () => {
+    const initCanvas = useCallback(() => {
         resizeCanvas();
         drawParticles();
-    };
+    }, []);
 
-    const onMouseMove = () => {
+    const onMouseMove = useCallback(() => {
         if (canvasRef.current) {
             const rect = canvasRef.current.getBoundingClientRect();
             const { w, h } = canvasSize.current;
@@ -114,7 +93,7 @@ export const Particles: React.FC<ParticlesProps> = ({
                 mouse.current.y = y;
             }
         }
-    };
+    }, [mousePosition.x, mousePosition.y]);
 
     type Circle = {
         x: number;
@@ -217,7 +196,7 @@ export const Particles: React.FC<ParticlesProps> = ({
         return remapped > 0 ? remapped : 0;
     };
 
-    const animate = () => {
+    const animate = useCallback(() => {
         clearContext();
         circles.current.forEach((circle: Circle, i: number) => {
             // Handle the alpha value
@@ -266,7 +245,28 @@ export const Particles: React.FC<ParticlesProps> = ({
             }
         });
         window.requestAnimationFrame(animate);
-    };
+    }, [vx, vy, ease, staticity, rgb]);
+
+    useEffect(() => {
+        if (canvasRef.current) {
+            context.current = canvasRef.current.getContext("2d");
+        }
+        initCanvas();
+        animate();
+        window.addEventListener("resize", initCanvas);
+
+        return () => {
+            window.removeEventListener("resize", initCanvas);
+        };
+    }, [color, animate, initCanvas]);
+
+    useEffect(() => {
+        onMouseMove();
+    }, [mousePosition.x, mousePosition.y, onMouseMove]);
+
+    useEffect(() => {
+        initCanvas();
+    }, [refresh, initCanvas]);
 
     return (
         <div className={className} ref={canvasContainerRef} aria-hidden="true">
