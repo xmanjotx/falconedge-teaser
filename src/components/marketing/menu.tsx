@@ -28,7 +28,7 @@ const Menu = () => {
                         href="#values"
                         className="h-10 px-4 py-2 text-sm font-normal rounded-md text-muted-foreground hover:text-foreground w-max hover:bg-none"
                     >
-                        About
+                        Why FalconEdge
                     </NavigationMenuLink>
                 </NavigationMenuItem>
             </NavigationMenuList>

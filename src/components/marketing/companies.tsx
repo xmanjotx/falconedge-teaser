@@ -6,10 +6,10 @@ const Companies = () => {
         <div className="flex w-full py-5 md:py-6">
             <div className="flex flex-col items-center justify-center text-center w-full py-2">
                 <h2 className="text-xl heading font-medium">
-                    Built on trusted infrastructure
+                    Processing at the edge. Secured from the core.
                 </h2>
                 <p className="mt-1 text-sm text-muted-foreground">
-                    Enterprise-grade cloud and edge computing.
+                    Infrastructure trusted by governments worldwide.
                 </p>
                 <div className="mt-4 md:mt-5 w-full relative overflow-hidden">
                     <Marquee pauseOnHover className="[--duration:30s]">

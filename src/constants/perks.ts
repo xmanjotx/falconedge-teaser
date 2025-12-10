@@ -6,7 +6,7 @@ export const PERKS = [
     {
         icon: Target,
         title: "Precision",
-        description: "Every signal matters. Every decision counts. Sub-pixel accuracy in detection and tracking."
+        description: "Every signal matters. Every decision counts. Accuracy that catches what others miss."
     },
     {
         icon: ZapIcon,

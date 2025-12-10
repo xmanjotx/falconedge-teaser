@@ -15,7 +15,7 @@ const CTA = () => {
                             Ready for real-time <br className="hidden md:block" /> intelligence?
                         </h2>
                         <p className="text-base md:text-lg text-center text-muted-foreground max-w-xl mx-auto mt-6">
-                            Join defense systems, metro operations, and intelligence agencies already using FalconEdge for mission-critical situational awareness.
+                            Built for defense systems, metro operations, and intelligence agencies demanding mission-critical situational awareness.
                         </p>
                         <div className="flex flex-col md:flex-row items-center justify-center w-full gap-6 mt-6">
                             <Button asChild size="lg" className="w-full md:w-max">

@@ -199,8 +199,8 @@ const DashboardMockup = () => {
                                 time="2 min ago"
                                 severity="high"
                             />
-                            <AlertItem 
-                                title="Anomaly Pattern Identified"
+                            <AlertItem
+                                title="Behavioral Anomaly Detected"
                                 location="Metro Central Hub"
                                 time="18 min ago"
                                 severity="medium"

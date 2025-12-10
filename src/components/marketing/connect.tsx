@@ -14,7 +14,7 @@ const Connect = () => {
                         Built for mission-critical environments
                     </h2>
                     <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6">
-                        FalconEdge delivers unified situational awareness across defense, metro, and intelligence operations
+                        One platform. Every domain. Complete operational clarity when it matters most.
                     </p>
                 </div>
             </Container>
@@ -23,19 +23,19 @@ const Connect = () => {
                     <UseCaseCard
                         icon={Shield}
                         title="Defense"
-                        headline="Situational awareness. Uncompromised."
+                        headline="See the full picture. Act with certainty."
                         description="Real-time intelligence across distributed assets. Edge processing for operational security. Unified command visibility."
                     />
-                    <UseCaseCard 
+                    <UseCaseCard
                         icon={Train}
                         title="Metro & Smart Cities"
                         headline="Cities that see. Cities that respond."
                         description="Unified monitoring across transit, infrastructure, and public spaces. AI-powered anomaly detection. Real-time incident response."
                     />
-                    <UseCaseCard 
+                    <UseCaseCard
                         icon={Radio}
                         title="Intelligence Agencies"
-                        headline="Every signal. Every second."
+                        headline="Patterns emerge. Threats don't hide."
                         description="Multi-source intelligence fusion at the edge. Pattern recognition at scale. Secure, sovereign data processing."
                     />
                 </div>

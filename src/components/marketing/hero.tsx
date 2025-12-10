@@ -21,7 +21,7 @@ const Hero = () => {
                     <span className="inline-flex items-center justify-center gap-2 animate-text-gradient animate-background-shine bg-gradient-to-r from-primary via-emerald-400 to-primary bg-[200%_auto] bg-clip-text text-sm text-transparent">
                         Tactical Intelligence Platform
                         <span className="text-xs text-secondary-foreground px-1.5 py-0.5 rounded-full bg-gradient-to-b from-foreground/20 to-foreground/10 flex items-center justify-center">
-                            Now Available
+                            Now Operational
                             <ArrowRightIcon className="w-3.5 h-3.5 ml-1 text-foreground/50" />
                         </span>
                     </span>
@@ -33,7 +33,7 @@ const Hero = () => {
             />
             <Container delay={0.1}>
                 <p className="text-sm sm:text-base lg:text-lg mt-4 text-muted-foreground max-w-2xl mx-auto">
-                    Real-time threat detection and unified situational awareness for defense, metro, and intelligence operations.
+                    Threats don&apos;t wait. Neither should your intelligence. Edge-native processing that delivers insight in milliseconds, not minutes.
                 </p>
             </Container>
             <Container delay={0.2}>
@@ -45,7 +45,7 @@ const Hero = () => {
                     </Button>
                     <Button asChild size="lg" variant="outline" className="hidden md:flex">
                         <Link href="#mission">
-                            View Mission
+                            See Use Cases
                         </Link>
                     </Button>
                 </div>

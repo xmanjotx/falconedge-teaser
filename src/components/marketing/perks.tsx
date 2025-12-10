@@ -11,10 +11,10 @@ const Perks = () => {
                 <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
                     <SectionBadge title="Why FalconEdge" />
                     <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium !leading-snug mt-6">
-                        Built for what matters
+                        Engineered for zero failure
                     </h2>
                     <p className="text-base md:text-lg text-center text-muted-foreground mt-6">
-                        Every design decision reflects our commitment to mission-critical operations. No compromises.
+                        Every design decision reflects our commitment to mission-critical operations. No shortcuts. No compromises.
                     </p>
                 </div>
             </Container>
