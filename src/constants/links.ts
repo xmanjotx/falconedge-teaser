@@ -57,10 +57,10 @@ export const FOOTER_LINKS = [
     {
         title: "Use Cases",
         links: [
-            { name: "Defence", href: "/defence" },
-            { name: "Metro & Smart Cities", href: "/metro" },
-            { name: "Intelligence Agencies", href: "/intelligence" },
-            { name: "Critical Infrastructure", href: "/infrastructure" },
+            { name: "Defence", href: "/use-cases/defence" },
+            { name: "Metro & Smart Cities", href: "/use-cases/metro-smart-cities" },
+            { name: "Intelligence Agencies", href: "/use-cases/intelligence-agencies" },
+            { name: "Critical Infrastructure", href: "/use-cases/critical-infrastructure" },
         ],
     },
     {
