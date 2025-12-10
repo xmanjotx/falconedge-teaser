@@ -3,33 +3,38 @@ import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
 const AuthCallbackPage = async () => {
+    try {
+        const user = await currentUser();
 
-    const user = await currentUser();
+        if (!user?.id || !user.emailAddresses[0].emailAddress) {
+            return redirect("/auth/signin");
+        }
 
-    if (!user?.id || !user.emailAddresses[0].emailAddress) {
-        return redirect("/auth/signin");
-    }
-
-    const existingUser = await db.user.findUnique({
-        where: {
-            clerkId: user.id,
-        },
-    });
-
-    if (!existingUser) {
-        await db.user.create({
-            data: {
-                id: user.id,
+        const existingUser = await db.user.findUnique({
+            where: {
                 clerkId: user.id,
-                email: user.emailAddresses[0].emailAddress,
-                avatar: user.imageUrl,
             },
         });
 
-        redirect("/app");
-    }
+        if (!existingUser) {
+            await db.user.create({
+                data: {
+                    id: user.id,
+                    clerkId: user.id,
+                    email: user.emailAddresses[0].emailAddress,
+                    avatar: user.imageUrl,
+                },
+            });
 
-    redirect("/app");
+            redirect("/app");
+        }
+
+        redirect("/app");
+    } catch (error) {
+        // Handle case where Clerk is not configured
+        console.warn("Clerk is not configured. Redirecting to home...");
+        return redirect("/");
+    }
 };
 
 export default AuthCallbackPage

@@ -8,7 +8,7 @@ import Container from "../global/container";
 import { Button, buttonVariants } from "../ui/button";
 
 import { cn } from "@/functions";
-import { useClerk } from "@clerk/nextjs";
+import { useClerk } from "@/hooks/use-clerk-safe";
 
 
 const DashboardSidebar = () => {

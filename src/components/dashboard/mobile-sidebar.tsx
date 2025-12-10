@@ -7,7 +7,7 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet";
 import { SIDEBAR_LINKS } from "@/constants/links";
-import { useClerk } from "@clerk/nextjs";
+import { useClerk } from "@/hooks/use-clerk-safe";
 import { LogOutIcon, MenuIcon, SearchIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";

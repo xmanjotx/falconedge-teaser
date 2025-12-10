@@ -5,7 +5,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
-import { useSignIn, useSignUp } from "@clerk/nextjs";
+import { useSignIn } from "@/hooks/use-signin-safe";
+import { useSignUp } from "@/hooks/use-signup-safe";
 
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
@@ -85,6 +86,11 @@ const SignUpForm = () => {
 
         try {
 
+            if (!signUp) {
+                toast.error("Authentication is not available. Please check your configuration.");
+                return;
+            }
+
             await signUp.create({
                 emailAddress: email,
             });
@@ -137,6 +143,11 @@ const SignUpForm = () => {
         setIsCodeLoading(true);
 
         try {
+            if (!signUp) {
+                toast.error("Authentication is not available. Please check your configuration.");
+                return;
+            }
+
             const completeSignup = await signUp.attemptEmailAddressVerification({
                 code,
             });

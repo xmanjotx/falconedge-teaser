@@ -24,7 +24,7 @@ import { ArrowLeftIcon, MailIcon } from "lucide-react";
 import Icons from "../global/icons";
 import { FADE_IN_VARIANTS } from "@/constants";
 import { toast } from "sonner";
-import { useSignIn } from "@clerk/nextjs";
+import { useSignIn } from "@/hooks/use-signin-safe";
 import LoadingIcon from "../ui/loading-icon";
 import { OAuthStrategy } from "@clerk/types";
 
@@ -81,6 +81,11 @@ const SignInForm = () => {
         setIsEmailLoading(true);
 
         try {
+            if (!signIn) {
+                toast.error("Authentication is not available. Please check your configuration.");
+                return;
+            }
+
             await signIn.create({
                 identifier: email,
             });
@@ -138,6 +143,11 @@ const SignInForm = () => {
         setIsCodeLoading(true);
 
         try {
+
+            if (!signIn) {
+                toast.error("Authentication is not available. Please check your configuration.");
+                return;
+            }
 
             const signInAttempt = await signIn.attemptFirstFactor({
                 strategy: "email_code",

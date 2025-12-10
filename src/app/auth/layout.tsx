@@ -1,6 +1,7 @@
 import { Particles } from "@/components/ui/particles";
 import Image from "next/image";
 import React from 'react';
+import ConditionalClerkProvider from "@/components/auth/conditional-clerk-provider";
 
 interface Props {
     children: React.ReactNode
@@ -26,7 +27,9 @@ const AuthLayout = ({ children }: Props) => {
                 color="#d4d4d4"
                 refresh
             />
-            {children}
+            <ConditionalClerkProvider>
+                {children}
+            </ConditionalClerkProvider>
         </main>
     );
 };
