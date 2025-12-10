@@ -1,0 +1,5 @@
+name = "falconedge-teaser"
+compatibility_date = "2025-12-10"
+
+[pages]
+directory = "out"
