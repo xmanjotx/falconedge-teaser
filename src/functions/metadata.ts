@@ -17,8 +17,8 @@ interface MetadataProps {
 }
 
 export const generateMetadata = ({
-    title = `${process.env.NEXT_PUBLIC_APP_NAME} - Smart Social Media Marketing Platform`,
-    description = "Streamline your social media management with AI-powered analytics, scheduling, and content optimization. Get real-time insights, automate posts, and boost engagement across all platforms",
+    title = `FalconEdge - Advanced Tactical Analytics Platform`,
+    description = "Cutting-edge tactical analytics and intelligence platform. Real-time monitoring, threat detection, and strategic insights for security professionals.",
     image = "/thumbnail.png",
     icons = [
         {
@@ -36,35 +36,37 @@ export const generateMetadata = ({
     ],
     noIndex = false,
     keywords = [
-        "AI content creation",
-        "content automation",
-        "AI writing assistant",
-        "content generation",
-        "artificial intelligence",
-        "content marketing"
+        "tactical analytics",
+        "security intelligence",
+        "threat detection",
+        "real-time monitoring",
+        "strategic insights",
+        "security platform",
+        "risk assessment",
+        "cybersecurity analytics"
     ],
-    author = process.env.NEXT_PUBLIC_AUTHOR_NAME,
-    twitterHandle = "@yourtwitterhandle",
+    author = "FalconEdge Team",
+    twitterHandle = "@falconedge",
     type = "website",
     locale = "en_US",
     alternates = {},
     publishedTime,
     modifiedTime
 }: MetadataProps = {}): Metadata => {
-    const metadataBase = new URL(process.env.NEXT_PUBLIC_APP_URL || "https://luro-ai.vercel.app");
+    const metadataBase = new URL(process.env.NEXT_PUBLIC_APP_URL || "https://falconedge-teaser.pages.dev");
     const imageUrl = image ? new URL(image, metadataBase).toString() : null;
 
     return {
         metadataBase,
         title: {
-            template: `%s | ${process.env.NEXT_PUBLIC_APP_NAME}`,
+            template: `%s | FalconEdge`,
             default: title
         },
         description,
         keywords,
         authors: [{ name: author }],
         creator: author,
-        publisher: process.env.NEXT_PUBLIC_APP_NAME,
+        publisher: "FalconEdge",
         formatDetection: {
             email: false,
             address: false,
@@ -75,7 +77,7 @@ export const generateMetadata = ({
         // OpenGraph
         openGraph: {
             type,
-            siteName: process.env.NEXT_PUBLIC_APP_NAME,
+            siteName: "FalconEdge",
             title,
             description,
             ...(imageUrl && {

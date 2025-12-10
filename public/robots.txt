@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://falconedge-teaser.pages.dev/sitemap.xml
