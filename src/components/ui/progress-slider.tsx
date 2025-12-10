@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import Image, { StaticImageData } from 'next/image'
 import { Transition } from '@headlessui/react'
 
@@ -18,6 +18,21 @@ export default function ProgressSlider({ items }: { items: Item[] }) {
     const [active, setActive] = useState<number>(0)
     const [progress, setProgress] = useState<number>(0)
 
+    const animate = useCallback(
+        (now: number) => {
+            let timeFraction = (now - firstFrameTime.current) / duration
+            if (timeFraction <= 1) {
+                setProgress(timeFraction * 100)
+                frame.current = requestAnimationFrame(animate)
+            } else {
+                timeFraction = 1
+                setProgress(0)
+                setActive((prev) => (prev + 1) % items.length)
+            }
+        },
+        [duration, items.length]
+    )
+
     useEffect(() => {
         firstFrameTime.current = performance.now()
         frame.current = requestAnimationFrame(animate)
@@ -25,18 +40,6 @@ export default function ProgressSlider({ items }: { items: Item[] }) {
             cancelAnimationFrame(frame.current)
         }
     }, [active, animate])
-
-    const animate = (now: number) => {
-        let timeFraction = (now - firstFrameTime.current) / duration
-        if (timeFraction <= 1) {
-            setProgress(timeFraction * 100)
-            frame.current = requestAnimationFrame(animate)
-        } else {
-            timeFraction = 1
-            setProgress(0)
-            setActive((active + 1) % items.length)
-        }
-    }
 
     const heightFix = () => {
         if (itemsRef.current && itemsRef.current.parentElement) itemsRef.current.parentElement.style.height = `${itemsRef.current.clientHeight}px`
