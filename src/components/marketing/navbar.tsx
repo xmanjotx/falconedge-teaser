@@ -31,15 +31,15 @@ const Navbar = () => {
 
     return (
         <div className="relative w-full h-full">
-            <div className="z-[99] fixed pointer-events-none inset-x-0 h-[88px] bg-[rgba(10,10,10,0.8)] backdrop-blur-sm [mask:linear-gradient(to_bottom,#000_20%,transparent_calc(100%-20%))]"></div>
+            <div className="z-[99] fixed pointer-events-none inset-x-0 h-[88px] bg-[rgba(10,10,10,0.8)] backdrop-blur-md [mask:linear-gradient(to_bottom,#000_20%,transparent_calc(100%-20%))]"></div>
 
             <header
                 className={cn(
-                    "fixed top-4 inset-x-0 mx-auto max-w-3xl px-2 md:px-4 z-[100] transform th",
+                    "fixed top-4 inset-x-0 mx-auto max-w-3xl px-2 md:px-4 z-[100] transform transition-all duration-300",
                     isOpen ? "h-[calc(100%-24px)]" : "h-12"
                 )}
             >
-                <Wrapper className="backdrop-blur-lg rounded-xl lg:rounded-2xl border border-[rgba(124,124,124,0.2)] px- md:px-2 flex items-center justify-start">
+                <Wrapper className="backdrop-blur-xl bg-background/60 rounded-xl lg:rounded-2xl border border-[rgba(124,124,124,0.2)] hover:border-[rgba(124,124,124,0.3)] transition-colors px- md:px-2 flex items-center justify-start">
                     <div className="flex items-center justify-between w-full sticky mt-[7px] lg:mt-auto mb-auto inset-x-0">
                         <div className="flex items-center flex-1 lg:flex-none pl-1">
                             <Link href="/" className="text-lg font-semibold text-foreground flex items-center gap-2">
@@ -59,8 +59,8 @@ const Navbar = () => {
                                 </Button>
                             ) : (
                                 <Button size="sm" variant="white" asChild className="hidden sm:flex text-xs h-7 px-3">
-                                    <Link href="/request-access">
-                                        Request Access
+                                    <Link href="/get-demo">
+                                        Get Demo
                                         <ArrowRightIcon className="w-4 h-4 ml-2 hidden lg:block" />
                                     </Link>
                                 </Button>

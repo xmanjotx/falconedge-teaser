@@ -38,12 +38,12 @@ const Hero = () => {
             </Container>
             <Container delay={0.2}>
                 <div className="flex items-center justify-center md:gap-x-6 mt-8">
-                    <Button asChild size="lg">
-                        <Link href="/request-access">
-                            Request Access
+                    <Button asChild size="lg" className="shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:scale-105 transition-all duration-300">
+                        <Link href="/get-demo">
+                            Get Demo
                         </Link>
                     </Button>
-                    <Button asChild size="lg" variant="outline" className="hidden md:flex">
+                    <Button asChild size="lg" variant="outline" className="hidden md:flex hover:scale-105 transition-all duration-300">
                         <Link href="#mission">
                             See Use Cases
                         </Link>
@@ -51,7 +51,7 @@ const Hero = () => {
                 </div>
             </Container>
             <Container delay={0.3}>
-                <div className="relative mx-auto max-w-7xl rounded-xl lg:rounded-[32px] border border-neutral-200/50 p-2 backdrop-blur-lg border-neutral-700 bg-neutral-800/50 md:p-4 mt-12">
+                <div className="relative mx-auto max-w-7xl rounded-xl lg:rounded-[32px] border border-neutral-200/50 p-2 backdrop-blur-lg border-neutral-700 bg-neutral-800/50 md:p-4 mt-8 md:mt-12">
                     <div className="absolute top-1/4 left-1/2 -z-10 gradient w-3/4 -translate-x-1/2 h-1/4 -translate-y-1/2 inset-0 blur-[10rem]"></div>
 
                     <div className="rounded-lg lg:rounded-[24px] border border-neutral-700 bg-black overflow-hidden">

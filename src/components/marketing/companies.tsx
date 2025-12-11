@@ -12,33 +12,33 @@ const Companies = () => {
                     Infrastructure trusted by governments worldwide.
                 </p>
                 <div className="mt-4 md:mt-5 w-full relative overflow-hidden">
-                    <Marquee pauseOnHover className="[--duration:30s]">
-                        <div className="flex items-center justify-center gap-12 md:gap-16">
+                    <Marquee pauseOnHover className="[--duration:40s]">
+                        <div className="flex items-center justify-center gap-16 md:gap-20">
                             <Image
                                 src="/logos/cloudlare.png"
                                 alt="Cloudflare"
-                                width={160}
-                                height={40}
-                                className="h-8 w-40 md:w-44 object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all"
+                                width={120}
+                                height={30}
+                                className="h-6 w-32 object-contain opacity-40 grayscale hover:opacity-60 transition-all"
                             />
                             <Image
                                 src="/logos/Google_Cloud_logo.png"
                                 alt="Google Cloud"
-                                width={160}
-                                height={40}
-                                className="h-8 w-40 md:w-44 object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all"
+                                width={120}
+                                height={30}
+                                className="h-6 w-32 object-contain opacity-40 grayscale hover:opacity-60 transition-all"
                             />
                             <Image
                                 src="/logos/Fastly_logo.png"
                                 alt="Fastly"
-                                width={160}
-                                height={40}
-                                className="h-8 w-40 md:w-44 object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all"
+                                width={120}
+                                height={30}
+                                className="h-6 w-32 object-contain opacity-40 grayscale hover:opacity-60 transition-all"
                             />
                         </div>
                     </Marquee>
-                    <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
-                    <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
+                    <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-background"></div>
+                    <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-background"></div>
                 </div>
             </div>
         </div>

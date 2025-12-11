@@ -19,8 +19,8 @@ const Perks = () => {
                 </div>
             </Container>
             <Container>
-                <div className="mt-16 w-full">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full relative">
+                <div className="mt-12 w-full">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full relative">
                         {PERKS.map((perk, index) => (
                             <Perk key={index} index={index} {...perk} />
                         ))}
@@ -45,28 +45,22 @@ const Perk = ({
     return (
         <div
             className={cn(
-                "flex flex-col lg:border-r transform-gpu py-10 relative group/feature border-neutral-800",
-                (index === 0 || index === 3) && "lg:border-l",
-                index < 3 && "lg:border-b"
+                "flex flex-col lg:border-r transform-gpu py-8 relative group/feature border-neutral-800",
+                index === 0 && "lg:border-l"
             )}
         >
-            {index < 3 && (
-                <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-neutral-80 from-emerald-950/25 to-transparent pointer-events-none" />
-            )}
-            {index >= 3 && (
-                <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-80 from-emerald-950/25 to-transparent pointer-events-none" />
-            )}
+            <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-emerald-950/25 to-transparent pointer-events-none" />
             <div className="group-hover/feature:-translate-y-1 transform-gpu transition-all duration-300 flex flex-col w-full">
-                <div className="mb-4 relative z-10 px-10">
-                    <Icon strokeWidth={1.3} className="w-10 h-10 origin-left transform-gpu text-neutral-500 transition-all duration-300 ease-in-out group-hover/feature:scale-75 group-hover/feature:text-foreground" />
+                <div className="mb-4 relative z-10 px-8">
+                    <Icon strokeWidth={1.3} className="w-10 h-10 origin-left transform-gpu text-neutral-500 transition-all duration-300 ease-in-out group-hover/feature:scale-90 group-hover/feature:text-primary" />
                 </div>
-                <div className="text-lg font-medium font-heading mb-2 relative z-10 px-10">
+                <div className="text-lg font-medium font-heading mb-2 relative z-10 px-8">
                     <div className="absolute left-0 -inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-700 group-hover/feature:bg-primary transition-all duration-500 origin-center" />
-                    <span className="group-hover/feature:-translate-y- group-hover/feature:text- transition duration-500 inline-block heading">
+                    <span className="transition duration-500 inline-block heading">
                         {title}
                     </span>
                 </div>
-                <p className="text-sm text-neutral-300 max-w-xs relative z-10 px-10">
+                <p className="text-sm text-neutral-300 max-w-xs relative z-10 px-8">
                     {description}
                 </p>
             </div>

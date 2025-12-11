@@ -6,7 +6,7 @@ import React from "react";
 const Menu = () => {
     return (
         <NavigationMenu className="font-heading">
-            <NavigationMenuList>
+            <NavigationMenuList className="gap-1">
                 <NavigationMenuItem>
                     <NavigationMenuLink
                         href="#capabilities"

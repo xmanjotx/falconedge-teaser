@@ -8,8 +8,9 @@ import { Particles } from "../ui/particles";
 const Footer = () => {
     return (
         <footer className="w-full py-10 relative">
+            <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/10 to-transparent mb-8"></div>
             <Container>
-                <Wrapper className="relative flex flex-col items-center justify-center pb-20 overflow-hidden footer">
+                <Wrapper className="relative flex flex-col items-center justify-center pb-16 overflow-hidden footer">
                     <Particles
                         className="absolute inset-0 w-full -z-10"
                         quantity={40}
@@ -28,17 +29,17 @@ const Footer = () => {
                             Intelligence at the edge.
                         </p>
                         <Button className="mt-8">
-                            <Link href="/request-access">
-                                Request Access
+                            <Link href="/get-demo">
+                                Get Demo
                             </Link>
                         </Button>
                     </div>
                 </Wrapper>
             </Container>
             <Container>
-                <Wrapper className="pt-10 flex items-center justify-center relative">
-                    <p className="text-sm text-secondary-foreground">
-                        &copy; {new Date().getFullYear()} FalconEdge. All rights reserved.
+                <Wrapper className="pt-8 flex items-center justify-center relative">
+                    <p className="text-sm text-muted-foreground/60">
+                        &copy; {new Date().getFullYear()} FalconEdge — Operational Intelligence
                     </p>
                 </Wrapper>
             </Container>

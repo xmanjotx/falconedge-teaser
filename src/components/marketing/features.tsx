@@ -40,7 +40,7 @@ const Features = () => {
                             <MagicCard particles={true} className="flex flex-col items-start w-full bg-primary/[0.08]">
                                 <div className="bento-card w-full flex-row gap-6">
                                     <div className="w-full h-40 flex items-center justify-center">
-                                        <Radio className="w-16 h-16 text-primary/60" />
+                                        <Radio className="w-16 h-16 text-primary/60 group-hover/card:text-primary group-hover/card:scale-110 transition-all duration-300" />
                                     </div>
                                     <div className="flex flex-col">
                                         <h4 className="text-xl font-heading font-medium heading ">
@@ -59,7 +59,7 @@ const Features = () => {
                             <MagicCard particles={true} className="flex flex-col items-start w-full row-span-1 bg-primary/[0.08]">
                                 <div className="bento-card w-full flex-row gap-6">
                                     <div className="w-full h-52 relative flex items-center justify-center">
-                                        <Eye className="w-20 h-20 text-primary/60" />
+                                        <Eye className="w-20 h-20 text-primary/60 group-hover/card:text-primary group-hover/card:scale-110 transition-all duration-300" />
                                         <div className="w-40 h-40 rounded-full bg-primary/10 blur-3xl -z-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
                                     </div>
                                     <div className="flex flex-col mt-auto">
@@ -76,7 +76,7 @@ const Features = () => {
                                 <MagicCard particles={true} className="flex flex-col items-start w-full row-span- row-start-[0.5] h-32 bg-primary/[0.08]">
                                     <div className="bento-card w-full relative items-center justify-center">
                                         <div className="w-full h-16 relative flex items-center justify-center">
-                                            <Cpu className="w-10 h-10 text-primary/60" />
+                                            <Cpu className="w-10 h-10 text-primary/60 group-hover/card:text-primary group-hover/card:scale-110 transition-all duration-300" />
                                             <div className="w-20 h-20 rounded-full bg-primary/10 blur-2xl z-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
                                         </div>
                                     </div>
@@ -84,7 +84,7 @@ const Features = () => {
                                 <MagicCard particles={true} className="flex flex-col items-start w-full row-start-2 !h-max bg-primary/[0.08]">
                                     <div className="bento-card w-full gap-6 relative">
                                         <div className="w-full h-48 relative flex items-center justify-center">
-                                            <Shield className="w-20 h-20 text-primary/60" />
+                                            <Shield className="w-20 h-20 text-primary/60 group-hover/card:text-primary group-hover/card:scale-110 transition-all duration-300" />
                                         </div>
                                         <div className="w-28 h-28 rounded-full bg-primary/10 blur-3xl -z-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
                                         <div className="text-center mt-4">
@@ -105,7 +105,7 @@ const Features = () => {
                                         </p>
                                     </div>
                                     <div className="w-full h-28 relative flex items-center justify-center">
-                                        <Wifi className="w-14 h-14 text-primary/60" />
+                                        <Wifi className="w-14 h-14 text-primary/60 group-hover/card:text-primary group-hover/card:scale-110 transition-all duration-300" />
                                         <div className="w-28 h-28 rounded-full bg-primary/10 blur-3xl -z-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full"></div>
                                     </div>
                                 </div>

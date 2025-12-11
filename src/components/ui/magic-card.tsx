@@ -31,7 +31,7 @@ export default function MagicCard({
     };
 
     return (
-        <div className="card rounded-xl lg:rounded-2xl overflow-hidden" onMouseMove={onMouseMove}>
+        <div className="card rounded-xl lg:rounded-2xl overflow-hidden group/card transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/10" onMouseMove={onMouseMove}>
             <div className="content">
                 {particles && (
                     <Particles
