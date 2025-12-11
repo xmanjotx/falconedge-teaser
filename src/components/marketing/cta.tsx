@@ -1,8 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import Container from "../global/container";
 import { Button } from "../ui/button";
 import { Particles } from "../ui/particles";
 import RetroGrid from "../ui/retro-grid";
+import DemoDialog from "./demo-dialog";
 
 const CTA = () => {
     return (
@@ -19,11 +22,11 @@ const CTA = () => {
                             Built for defense systems, metro operations, and intelligence agencies demanding mission-critical situational awareness.
                         </p>
                         <div className="flex flex-col md:flex-row items-center justify-center w-full gap-6 mt-8">
-                            <Button asChild size="lg" className="w-full md:w-max px-8 py-6 text-base shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-shadow">
-                                <Link href="/get-demo">
+                            <DemoDialog>
+                                <Button size="lg" className="w-full md:w-max px-8 py-6 text-base shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-shadow">
                                     Get Demo
-                                </Link>
-                            </Button>
+                                </Button>
+                            </DemoDialog>
                             <Button asChild size="lg" variant="secondary" className="w-full md:w-max">
                                 <Link href="#capabilities">
                                     Explore Capabilities

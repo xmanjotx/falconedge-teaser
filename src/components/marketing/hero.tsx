@@ -1,10 +1,12 @@
+"use client";
+
 import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
 import { BlurText } from "../ui/blur-text";
 import { Button } from "../ui/button";
-import { motion } from "framer-motion";
 import Container from "../global/container";
 import DashboardMockup from "./dashboard-mockup";
+import DemoDialog from "./demo-dialog";
 
 const Hero = () => {
     return (
@@ -38,11 +40,11 @@ const Hero = () => {
             </Container>
             <Container delay={0.2}>
                 <div className="flex items-center justify-center md:gap-x-6 mt-8">
-                    <Button asChild size="lg" className="shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:scale-105 transition-all duration-300">
-                        <Link href="/get-demo">
+                    <DemoDialog>
+                        <Button size="lg" className="shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:scale-105 transition-all duration-300">
                             Get Demo
-                        </Link>
-                    </Button>
+                        </Button>
+                    </DemoDialog>
                     <Button asChild size="lg" variant="outline" className="hidden md:flex hover:scale-105 transition-all duration-300">
                         <Link href="#mission">
                             See Use Cases

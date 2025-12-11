@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import Icons from "../global/icons";
 import Wrapper from "../global/wrapper";
 import { Button } from "../ui/button";
+import DemoDialog from "./demo-dialog";
 import Menu from "./menu";
 import MobileMenu from "./mobile-menu";
 
@@ -58,12 +59,12 @@ const Navbar = () => {
                                     </Link>
                                 </Button>
                             ) : (
-                                <Button size="sm" variant="white" asChild className="hidden sm:flex text-xs h-7 px-3">
-                                    <Link href="/get-demo">
+                                <DemoDialog>
+                                    <Button size="sm" variant="white" className="hidden sm:flex text-xs h-7 px-3">
                                         Get Demo
                                         <ArrowRightIcon className="w-4 h-4 ml-2 hidden lg:block" />
-                                    </Link>
-                                </Button>
+                                    </Button>
+                                </DemoDialog>
                             )}
                             <Button
                                 size="icon"

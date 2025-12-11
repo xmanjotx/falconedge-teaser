@@ -1,9 +1,11 @@
-import Link from "next/link";
+"use client";
+
 import Container from "../global/container";
 import Icons from "../global/icons";
 import Wrapper from "../global/wrapper";
 import { Button } from "../ui/button";
 import { Particles } from "../ui/particles";
+import DemoDialog from "./demo-dialog";
 
 const Footer = () => {
     return (
@@ -28,11 +30,11 @@ const Footer = () => {
                         <p className="text-base mt-4 text-muted-foreground">
                             Intelligence at the edge.
                         </p>
-                        <Button className="mt-8">
-                            <Link href="/get-demo">
+                        <DemoDialog>
+                            <Button className="mt-8">
                                 Get Demo
-                            </Link>
-                        </Button>
+                            </Button>
+                        </DemoDialog>
                     </div>
                 </Wrapper>
             </Container>
